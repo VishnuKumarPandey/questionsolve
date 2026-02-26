@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,9 +31,9 @@ ul li a{
     padding: 0px 10px;
     margin: 0 5px;
     text-decoration: none;
-    color: white;
-    border: 2px solid white;
-    border-radius: 50px;
+    color: rgb(243, 165, 165);
+    border: 2px solid rgb(244, 240, 219);
+    border-radius: 5px;
 }
 main{
     display: flex;
@@ -97,11 +95,39 @@ border: 2px solid white;
     background-color: black;
     color: white;
 }
+button{
+    color: rgb(232, 225, 19);
+    background-color: black;
+}
+
+.light-mode{
+    background-color: #f5f5f5;
+}
+
+.light-mode *{
+    color: black;
+}
+
+.light-mode header{
+    border-bottom: 1px solid #ccc;
+}
+
+.light-mode ul li a{
+    border: 2px solid black;
+}
+
+.light-mode .btn{
+    background: black;
+    color: white;
+}
+.light-mode .a{
+    color: #8d79e5;
+}
 
 
     </style>
 </head>
-<body>
+<body class="">
     <header>
     <div class="logo">Logo</div>
     <nav>
@@ -112,6 +138,7 @@ border: 2px solid white;
         <li> <a href="#"> Sell Now </a></li>
         <li> <a href="#"> About Us </a></li>
         <li> <a href="#" class="signup"> Sign Up </a></li>
+        <li id="ab"><button class="a" onclick="toggleTheme()">Toggle Theme</button></li>
     </ul>
 </nav>
 </header>
@@ -130,5 +157,18 @@ border: 2px solid white;
     <img src="About.png" class="merc">
     </div>
 </main>
-</body>
-</html>
+<script>
+    let isDark = true;
+
+    function toggleTheme(){
+        if(isDark){
+            document.body.classList.add("light-mode");
+            isDark = false;
+        }else{
+            document.body.classList.remove("light-mode");
+            isDark = true;
+        }
+    }
+</script>
+
+</body></html>
